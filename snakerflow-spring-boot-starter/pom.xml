@@ -6,7 +6,7 @@
 
     <groupId>com.github.snakerflow-starter</groupId>
     <artifactId>snakerflow-spring-boot-starter</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.5</version>
     <name>snakerflow-spring-boot-starter</name>
     <description>snakerflow plugins</description>
     <url>http://www.example.com</url>
@@ -38,12 +38,12 @@
         <dependency>
             <groupId>com.github.snakerflow</groupId>
             <artifactId>snaker-spring</artifactId>
-            <version>2.4.0</version>
+            <version>2.5.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.snakerflow</groupId>
             <artifactId>snaker-mybatis</artifactId>
-            <version>2.4.0</version>
+            <version>2.5.1</version>
         </dependency>
 
         <dependency>
@@ -92,26 +92,26 @@
             </distributionManagement>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>release</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>snapshot</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+                    <!--                    <plugin>-->
+                    <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+                    <!--                        <artifactId>maven-source-plugin</artifactId>-->
+                    <!--                        <executions>-->
+                    <!--                            <execution>-->
+                    <!--                                <id>release</id>-->
+                    <!--                                <phase>package</phase>-->
+                    <!--                                <goals>-->
+                    <!--                                    <goal>jar-no-fork</goal>-->
+                    <!--                                </goals>-->
+                    <!--                            </execution>-->
+                    <!--                            <execution>-->
+                    <!--                                <id>snapshot</id>-->
+                    <!--                                <phase>package</phase>-->
+                    <!--                                <goals>-->
+                    <!--                                    <goal>jar-no-fork</goal>-->
+                    <!--                                </goals>-->
+                    <!--                            </execution>-->
+                    <!--                        </executions>-->
+                    <!--                    </plugin>-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -133,19 +133,19 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>release</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+                    <!--                    <plugin>-->
+                    <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+                    <!--                        <artifactId>maven-gpg-plugin</artifactId>-->
+                    <!--                        <executions>-->
+                    <!--                            <execution>-->
+                    <!--                                <id>release</id>-->
+                    <!--                                <phase>verify</phase>-->
+                    <!--                                <goals>-->
+                    <!--                                    <goal>sign</goal>-->
+                    <!--                                </goals>-->
+                    <!--                            </execution>-->
+                    <!--                        </executions>-->
+                    <!--                    </plugin>-->
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -160,7 +160,6 @@
             </build>
         </profile>
     </profiles>
-
 
 
     <build>
@@ -190,7 +189,8 @@
         <tag>master</tag>
         <url>git@github.com:snakerflow-starter/snakerflow-spring-boot-starter.git</url>
         <connection>scm:git:git@github.com:snakerflow-starter/snakerflow-spring-boot-starter.git</connection>
-        <developerConnection>scm:git:git@github.com:snakerflow-starter/snakerflow-spring-boot-starter.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:snakerflow-starter/snakerflow-spring-boot-starter.git
+        </developerConnection>
     </scm>
     <developers>
         <developer>

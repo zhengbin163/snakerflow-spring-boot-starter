@@ -10,17 +10,25 @@
        default-lazy-init="true">
 
     <context:annotation-config/>
-    <bean class="com.github.snakerflow.plugin.AutoConfig"/>
+    <bean class="com.github.snakerflow.plugin.AutoConfig" />
 
-    <!-- mybatis access -->
-    <bean id="dbAccess" class="org.snaker.engine.access.mybatis.MybatisAccess">
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-    </bean>
-    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+<!--    <bean id="dbAccess" class="org.snaker.engine.access.jdbc.JdbcAccess">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+
+    <bean id="dbAccess" class="org.snaker.engine.spring.SpringJdbcAccess">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="org.snaker.engine.entity"/>
-        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
+
+<!--     mybatis access-->
+<!--        <bean id="dbAccess" class="org.snaker.engine.access.mybatis.MybatisAccess">-->
+<!--            <property name="sqlSessionFactory" value="sqlSessionFactory"/>-->
+<!--        </bean>-->
+<!--        <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">-->
+<!--            <property name="dataSource" ref="dataSource"/>-->
+<!--            <property name="typeAliasesPackage" value="org.snaker.engine.entity"/>-->
+<!--            <property name="mapperLocations" value="classpath:mapper/*.xml"/>-->
+<!--        </bean>-->
 
     <!--SnakerEngine配置-->
     <context:component-scan base-package="org.snaker.engine"/>
@@ -88,4 +96,5 @@
     </aop:config>
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
+    <bean class="org.snaker.engine.impl.GeneralAccessStrategy"/>
 </beans>
