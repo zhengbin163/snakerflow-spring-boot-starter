@@ -105,12 +105,12 @@
     <distributionManagement>
         <repository>
             <id>asiainfo-releases</id>
-            <url>http://10.19.33.13:18081/repository/maven-releases/</url>
+            <url>http://10.19.33.13:18081/repository/aic-releases/</url>
         </repository>
 
         <snapshotRepository>
             <id>asiainfo-snapshots</id>
-            <url>http://10.19.33.13:18081/repository/maven-snapshots/</url>
+            <url>http://10.19.33.13:18081/repository/aic-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
