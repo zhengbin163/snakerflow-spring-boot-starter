@@ -14,6 +14,7 @@
     <modules>
         <module>snakerflow-spring-boot-starter</module>
         <module>snakerflow-spring-boot-starter-example</module>
+        <module>snakerflow-k8splus-jar</module>
     </modules>
 
     <properties>
