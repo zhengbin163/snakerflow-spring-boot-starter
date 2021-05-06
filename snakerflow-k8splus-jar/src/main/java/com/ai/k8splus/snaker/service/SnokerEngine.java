@@ -1,9 +1,13 @@
 package com.ai.k8splus.snaker.service;
 
-import com.ai.k8splus.core.util.Assert;
 import com.ai.k8splus.snaker.common.exception.SnokerflowMsgEnum;
+import com.ai.k8splus.core.util.Assert;
+import com.ai.k8splus.snaker.feign.ISnakerService;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.collections.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.cloud.openfeign.FeignContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,7 +34,7 @@ public class SnokerEngine {
 
         Map<String, Object> args = new HashMap<>();
         args.put("data", JSONObject.toJSONString(data));
-        snokerService.startProcessByName(processName, JSONObject.toJSONString(args));
+//        snokerService.startProcessByName(processName, MapUtils(args));
     }
 
     /**
@@ -43,7 +47,7 @@ public class SnokerEngine {
 
         Map<String, Object> args = new HashMap<>();
         args.put("data", JSONObject.toJSONString(data));
-        snokerService.startProcessAndNext(processName, JSONObject.toJSONString(args));
+//        snokerService.startProcessAndNext(processName, JSONObject.toJSONString(args));
     }
 
     /**
@@ -56,6 +60,6 @@ public class SnokerEngine {
 
         Map<String, Object> args = new HashMap<>();
         args.put("data", JSONObject.toJSONString(data));
-        snokerService.nextByOrderId(orderId, JSONObject.toJSONString(args));
+//        snokerService.nextByOrderId(orderId, JSONObject.toJSONString(args));
     }
 }
