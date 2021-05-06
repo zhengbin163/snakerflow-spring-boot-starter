@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8088
 
 spring:
   datasource:
-      url: jdbc:mysql://localhost:3306/snaker?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
-      username: root
-      password: rootroot
-      driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.19.33.16:18989/snaker?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: asiainfo#12345
+    driver-class-name: com.mysql.jdbc.Driver
