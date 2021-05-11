@@ -6,6 +6,9 @@ public enum SnokerflowMsgEnum implements IBizExceptionMes {
     ARG_OBJS_IS_NOT_NULL(16001, "页面参数填写不能为空！"),
     PROCESS_NAME_IS_NOT_NULL(16002, "流程编码不能为空！"),
     OPERATOR_ID_IS_NOT_NULL(16003, "任务执行人ID不能为空！"),
+    ORDER_ID_IS_NOT_NULL(16004, "工单ID不能为空！"),
+    ORDER_NO_IS_NOT_NULL(16005, "业务单号不能为空！"),
+    ORDER_TYPE_IS_NOT_NULL(16006, "业务类型不能为空！"),
 
 
 
