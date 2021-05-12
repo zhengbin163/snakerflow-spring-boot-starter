@@ -1,6 +1,8 @@
 package com.ai.k8splus.snaker.config;
 
 import com.ai.k8splus.core.bean.Result;
+import com.ai.k8splus.core.exception.AsiaException;
+import com.ai.k8splus.core.exception.IBizExceptionMes;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.JavaType;
@@ -27,12 +29,29 @@ public class FeignResultDecoder implements Decoder {
 
         try {
             Result result = JSONObject.parseObject(bodyStr, Result.class);
+            if(result.getStatus() != 0){
+//                throw AsiaException.get(new IBizExceptionMes() {
+//                    @Override
+//                    public String getMsg() {
+//                        return result.getMessage();
+//                    }
+//
+//                    @Override
+//                    public int getCode() {
+//                        return result.getStatus();
+//                    }
+//                });
+                throw new DecodeException(result.getMessage());
+            }
+
             if(result.getContent() instanceof JSONArray){
                 return JSONArray.parseArray(JSONObject.toJSONString(result.getContent()), (Class)((ParameterizedTypeImpl) type).getActualTypeArguments()[0]);
             }else{
                 return JSONObject.parseObject(JSONObject.toJSONString(result.getContent()), (Class) type);
             }
 
+        } catch (DecodeException ae){
+            throw ae;
         } catch (Exception e) {
             Object o = this.json2obj(bodyStr, type);
             return o;

@@ -3,10 +3,9 @@ package com.ai.k8splus.snaker.feign;
 import com.ai.k8splus.core.bean.Result;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @FeignClient(url = "${edge-server.registry}/snaker",value = "snakerService")
 public interface ISnakerService {
@@ -39,4 +38,13 @@ public interface ISnakerService {
      */
     @DeleteMapping(value = "/terminate/{type}/{orderNo}")
     public void terminateByOrderNo(@PathVariable("type") String type, @PathVariable("orderNo") String orderNo, @RequestParam("errMsg") String errMsg);
+
+    /**
+     * 获取当前工单的业务数据
+     * @param orderId
+     * @return
+     * @throws Exception
+     */
+    @GetMapping(value = "/task/current/busidata/{orderId}")
+    public Map<String, Object> getCurrTaskBusiData(@PathVariable("orderId") String orderId);
 }

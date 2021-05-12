@@ -1,5 +1,6 @@
 package com.ai.k8splus.snaker.config;
 
+import feign.RequestInterceptor;
 import feign.codec.Decoder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.cloud.openfeign.FeignContext;
@@ -16,7 +17,7 @@ public class FeignConfig {
     }
 
     @Bean
-    public FeignRequestInterceptor feignRequestInterceptor() {
+    public RequestInterceptor feignRequestInterceptor() {
         return new FeignRequestInterceptor();
     }
 }

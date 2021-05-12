@@ -11,6 +11,7 @@ public enum SFProcessTypeEnum {
     //项目审批
     APP_APPLY("appapply", "", ""),
     METALB_APPLY("metalbapply", "", ""),
+    APP_RESOURCE_EDIT("appresedit", "", ""),
 
     ;
     private static final Map<String, SFProcessTypeEnum> map = new HashMap<>();
