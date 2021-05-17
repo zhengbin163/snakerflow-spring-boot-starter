@@ -13,7 +13,7 @@
 
     <modules>
         <module>snakerflow-spring-boot-starter</module>
-        <module>snakerflow-spring-boot-starter-example</module>
+<!--        <module>snakerflow-spring-boot-starter-example</module>-->
         <module>snakerflow-k8splus-jar</module>
     </modules>
 
@@ -41,4 +41,27 @@
             <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>asiainfo-releases</id>
+            <url>http://10.19.33.13:18081/repository/aic-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>asiainfo-snapshots</id>
+            <url>http://10.19.33.13:18081/repository/aic-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
