@@ -13,9 +13,9 @@ public interface ISnakerService {
     @PostMapping(value = "/start/{processId}")
     public Result<String> startProcessById(@PathVariable("processId") String processId, @RequestParam("data") String data, @RequestParam(value = "orderNo", required = false) String orderNo);
     @PostMapping(value = "/start/name/{processName}")
-    public void startProcessByName(@PathVariable("processName") String processName, JSONObject data, @RequestParam(value = "orderNo", required = false) String orderNo);
+    public Result<String> startProcessByName(@PathVariable("processName") String processName, JSONObject data, @RequestParam(value = "orderNo", required = false) String orderNo);
     @PostMapping(value = "/start/next/{processName}")
-    String startProcessAndNext(@PathVariable("processName") String processName, JSONObject data, @RequestParam(value = "orderNo", required = false) String orderNo);
+    Result<String> startProcessAndNext(@PathVariable("processName") String processName, JSONObject data, @RequestParam(value = "orderNo", required = false) String orderNo);
     @PostMapping(value = "/next/order/{orderId}")
     Result<String> nextByOrderId(@PathVariable("orderId") String orderId, JSONObject data);
     @PostMapping(value = "/next/task/{taskId}")
@@ -27,7 +27,7 @@ public interface ISnakerService {
      * @throws Exception
      */
     @DeleteMapping(value = "/terminate/orderid/{orderId}")
-    public void terminateByOrderId(@PathVariable("orderId") String orderId, @RequestParam("errMsg") String errMsg) throws Exception;
+    public Result<String> terminateByOrderId(@PathVariable("orderId") String orderId, @RequestParam("errMsg") String errMsg) throws Exception;
 
     /**
      * 终止当前工单
@@ -37,7 +37,7 @@ public interface ISnakerService {
      * @throws Exception
      */
     @DeleteMapping(value = "/terminate/{type}/{orderNo}")
-    public void terminateByOrderNo(@PathVariable("type") String type, @PathVariable("orderNo") String orderNo, @RequestParam("errMsg") String errMsg);
+    public Result<String> terminateByOrderNo(@PathVariable("type") String type, @PathVariable("orderNo") String orderNo, @RequestParam("errMsg") String errMsg);
 
     /**
      * 获取当前工单的业务数据
