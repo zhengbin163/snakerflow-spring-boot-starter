@@ -47,4 +47,7 @@ public interface ISnakerService {
      */
     @GetMapping(value = "/task/current/busidata/{orderId}")
     public Map<String, Object> getCurrTaskBusiData(@PathVariable("orderId") String orderId);
+
+    @GetMapping(value = "/task/current/busidata/type/{type}/orderno/{orderNo}")
+    public JSONObject getCurrTaskBusiData(@PathVariable("type") String type, @PathVariable("orderNo") String orderNo) throws Exception;
 }
