@@ -107,16 +107,21 @@
             <organization>snakerflow</organization>
         </developer>
     </developers>
-
-    <distributionManagement>
-        <repository>
-            <id>asiainfo-releases</id>
-            <url>http://10.19.33.13:18081/repository/aic-releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>asiainfo-snapshots</id>
-            <url>http://10.19.33.13:18081/repository/aic-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    	<repositories>
+    		<repository>
+    			<id>asiainfo-repos</id>
+    			<name>Central Repository</name>
+    			<url>http://10.19.33.13:18081/repository/maven-public/</url>
+    			<releases>
+    				<enabled>true</enabled>
+    				<updatePolicy>always</updatePolicy>
+    				<checksumPolicy>warn</checksumPolicy>
+    			</releases>
+    			<snapshots>
+    				<enabled>true</enabled>
+    				<updatePolicy>always</updatePolicy>
+    				<checksumPolicy>fail</checksumPolicy>
+    			</snapshots>
+    		</repository>
+    	</repositories>
 </project>

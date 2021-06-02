@@ -7,7 +7,7 @@
     <groupId>com.github.snakerflow-starter</groupId>
     <artifactId>snakerflow-spring-boot-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>snakerflow-spring-boot-parent</name>
     <url>http://www.example.com</url>
 
