@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ai.k8splus</groupId>
     <artifactId>snaker</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>snaker-k8splus-jar</name>
     <description>this is snaker`s jar for k8splus</description>
     <properties>
@@ -101,4 +101,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>asiainfo-releases</id>
+            <url>http://10.19.33.13:18081/repository/aic-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>asiainfo-snapshots</id>
+            <url>http://10.19.33.13:18081/repository/aic-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

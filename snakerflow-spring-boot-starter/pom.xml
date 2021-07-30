@@ -6,7 +6,7 @@
 
     <groupId>com.github.snakerflow-starter</groupId>
     <artifactId>snakerflow-spring-boot-starter</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6-REGISTRY</version>
     <name>snakerflow-spring-boot-starter</name>
     <description>snakerflow plugins</description>
     <url>http://www.example.com</url>
@@ -38,12 +38,12 @@
         <dependency>
             <groupId>com.github.snakerflow</groupId>
             <artifactId>snaker-spring</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
         <dependency>
             <groupId>com.github.snakerflow</groupId>
             <artifactId>snaker-mybatis</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
 
         <dependency>
@@ -124,4 +124,16 @@
     			</snapshots>
     		</repository>
     	</repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>asiainfo-releases</id>
+            <url>http://10.19.33.13:18081/repository/aic-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>asiainfo-snapshots</id>
+            <url>http://10.19.33.13:18081/repository/aic-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
